@@ -18,9 +18,11 @@ Route::get('policies', 'PolicyController@index');
 
 Route::get('policies/{policy}', 'PolicyController@show');
 
+// Route::post('create', 'PolicyController@create');
 
+// Route::delete('policies/{policy}', 'PolicyController@delete');
 
-
+testing github
 
 
 
