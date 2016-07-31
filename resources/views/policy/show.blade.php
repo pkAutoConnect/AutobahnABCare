@@ -7,23 +7,13 @@
 
         <div class="col-md-6 col-md-offset-3">
 
-            <h1> {{$policy->name}}  </h1>
-
-
+            <h1> {{$policies->name}}  </h1>
             <hr>
-
             <ul class="list-group">
-
-
                 <li class="list-group-item">
-                    {{$policy->premium}} <br>
+                    {{$policies->premium}} <br>
                 </li>
             </ul>
-
-
-
-
-
         </div>
     </div>
 

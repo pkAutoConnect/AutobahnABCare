@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Illuminate\Support\Facades\App;
 
 use App\Http\Controllers\Controller;
-
+//use Symfony\Component\HttpFoundation\Session\Session;
 use \App\Policy;
+use Session;
 
 class PolicyController extends Controller
 {
@@ -21,9 +23,9 @@ class PolicyController extends Controller
         return view('policy.index', compact('cards'));
     }
 
-    public function show(Policy $policy)
+    public function show(Policy $policies)
     {
-        return view('policy.show', compact('policy'));
+        return view('policy.show', compact('policies'));
     }
 
     public function create()
@@ -37,8 +39,30 @@ class PolicyController extends Controller
         $policy->name = $request->name;
         $policy->premium = $request->premium;
         $policy->save();
-
+        Session::flash('message', 'Successfully created the policy!');
         return redirect('policies');
     }
 
+    public function edit($id)
+    {
+        $policies = Policy::findOrFail($id);
+        return view('policy.edit', compact('policies'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $policy = Policy::findOrFail($id);
+        $policy->update($request->all());
+        Session::flash('message', 'Successfully updated the policy!');
+        return redirect('policies');
+    }
+
+
+    public function destroy($id){
+
+        $policy = Policy::findOrFail($id);
+        $policy->delete();
+      Session::flash('message', 'Successfully deleted the policy!');
+        return redirect('policies');
+    }
 }

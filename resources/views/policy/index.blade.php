@@ -5,6 +5,10 @@
 
     <h1>All Policies</h1>
 
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
+
     @foreach ($cards as $card)
 
         <div>
