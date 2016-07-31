@@ -16,7 +16,11 @@ class Policy extends Model
 
 
 
+public function path() {
 
+
+    return '/policies/'.$this->id;
+}
 
 
 

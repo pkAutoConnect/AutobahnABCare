@@ -9,8 +9,7 @@
 
         <div>
 
-            {{$card->name}}
-
+           <a href="{{$card->path()}}">  {{$card->name}}  </a>
 
         </div>
 

@@ -8,21 +8,24 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
 Route::get('policies', 'PolicyController@index');
+
+Route::get('policies/create', 'PolicyController@create');
 
 Route::get('policies/{policy}', 'PolicyController@show');
 
-// Route::post('create', 'PolicyController@create');
+Route::post('policies','PolicyController@store');
+
 
 // Route::delete('policies/{policy}', 'PolicyController@delete');
 
-// testing github
+
+
+
+
+
+
+
 
 
 
