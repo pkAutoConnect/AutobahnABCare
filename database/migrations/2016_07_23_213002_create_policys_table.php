@@ -34,6 +34,6 @@ class CreatePolicysTable extends Migration
      */
     public function down()
     {
-        Schema::drop('policys');
+        Schema::drop('policies');
     }
 }

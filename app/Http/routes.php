@@ -4,9 +4,7 @@
 |--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
-|
 */
-
 
 //Route::get('policies', 'PolicyController@index');
 //Route::get('policies/create', 'PolicyController@create');
@@ -17,14 +15,16 @@
 Route::resource('policies', 'PolicyController');
 
 
+
+
+
+
+
+
+
 Route::get('/', function () {
-    Session::flash('message', 'Successfully deleted the nerd!');
-
     return view('welcome');
-
-
 });
-
 
 Route::get('insert', function () {
     $policy = new App\Policy();

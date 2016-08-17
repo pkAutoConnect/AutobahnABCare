@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddPolicyRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,12 +34,13 @@ class PolicyController extends Controller
         return view('policy.create');
     }
 
-    public function store(Requests\AddPolicyRequest $request)
+    public function store(AddPolicyRequest $request)
     {
         $policy = new Policy;
         $policy->name = $request->name;
         $policy->premium = $request->premium;
         $policy->save();
+
         Session::flash('message', 'Successfully created the policy!');
         return redirect('policies');
     }
@@ -49,20 +51,27 @@ class PolicyController extends Controller
         return view('policy.edit', compact('policies'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, AddPolicyRequest $request)
     {
         $policy = Policy::findOrFail($id);
         $policy->update($request->all());
+
         Session::flash('message', 'Successfully updated the policy!');
         return redirect('policies');
     }
 
 
-    public function destroy($id){
+    public function destroy($id)
+    {
 
         $policy = Policy::findOrFail($id);
         $policy->delete();
-      Session::flash('message', 'Successfully deleted the policy!');
+
+        Session::flash('message', 'Successfully deleted the policy!');
         return redirect('policies');
     }
+
 }
+
+//TODO PK-Error handling in case policy is not found
+//TODO PK-use sweetupdates.js for session flashing

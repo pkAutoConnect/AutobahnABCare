@@ -14,13 +14,11 @@
         <input type="hidden" name="_method" value="PUT">
 
         <div class="form-group">
-            <input type="text" name="name" class="form-control" value="{{$policies->name}}"
-                   placeholder="Car Owner Name">
+            <input type="text" name="name" class="form-control" value="{{$policies->name}}">
         </div>
 
         <div class="form-group">
-            <input type="text" name="premium" class="form-control" value="{{$policies->premium}}"
-                   placeholder="Premium amount of policy">
+            <input type="text" name="premium" class="form-control" value="{{$policies->premium}}">
         </div>
 
         <div class="form-group">
@@ -41,7 +39,7 @@
 
         </ul>
 
-    @endif
+        @endif
 
         </div>
 

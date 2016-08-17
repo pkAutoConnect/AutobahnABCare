@@ -15,9 +15,6 @@ class PolicyTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-
-//        DB::table('policies')->delete();
 
         Policy::create(array(
 

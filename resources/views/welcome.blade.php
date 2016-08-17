@@ -39,7 +39,11 @@
         <div class="container">
             <div class="content">
                 <div class="title">Autobahn Care Website</div>
+                <br>
+                <h3> Powered by AutoConnect.us</h3>
             </div>
+
+
         </div>
         @if (Session::has('message'))
             <div class="alert alert-info">{{ Session::get('message') }}</div>
